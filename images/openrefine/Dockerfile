@@ -1,5 +1,5 @@
 # OpenRefine — built from the official upstream release (no canonical image exists).
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:25-jre
 ARG OPENREFINE_VERSION=3.10.1
 RUN apt-get update \
  && apt-get install -y --no-install-recommends curl ca-certificates \
