@@ -1,0 +1,15 @@
+# Keeps the SHA-pinned Actions and the image base layers current (pinning without
+# a bumper just trades a mutable-tag hole for a staleness one).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: docker
+    directory: "/images/openrefine"
+    schedule:
+      interval: weekly
