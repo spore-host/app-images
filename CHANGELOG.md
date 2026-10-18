@@ -8,6 +8,14 @@ Image releases are tagged `<app>-v<version>` (e.g. `openrefine-v3.10.1`).
 
 ## [Unreleased]
 
+### Changed
+- **Dependabot no longer proposes Java major upgrades for `openrefine`'s
+  `eclipse-temurin` base.** It had proposed `21-jre` -> `24-jre` (#4). 24 is a
+  non-LTS release whose support has already ended, so that bump would have
+  replaced a supported runtime with an unsupported one. Java majors are now
+  changed deliberately, after checking OpenRefine's supported Java versions.
+  The image stays on `eclipse-temurin:21-jre` (LTS).
+
 ### Added
 - **`openrefine`** (`ghcr.io/spore-host/openrefine`) — OpenRefine 3.10.1 built
   from the official upstream release on `eclipse-temurin:21-jre`, bound to
