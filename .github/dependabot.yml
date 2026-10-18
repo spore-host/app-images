@@ -13,3 +13,12 @@ updates:
     directory: "/images/openrefine"
     schedule:
       interval: weekly
+    # Java majors are a deliberate choice, not a weekly bump. Dependabot proposed
+    # 21-jre -> 24-jre (#4), but 24 is a non-LTS release whose support has
+    # already ended, so it would have swapped a supported runtime for an
+    # unsupported one. A new major should also be checked against OpenRefine's
+    # supported Java versions first. Patch and minor updates of the current line
+    # still arrive.
+    ignore:
+      - dependency-name: "eclipse-temurin"
+        update-types: ["version-update:semver-major"]
